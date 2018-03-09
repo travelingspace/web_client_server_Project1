@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Circle Intro</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <style>
+
+        body {
+            background-color: black;
+        }
+
+        .center {
+            position: fixed;
+            text-align: center;
+            vertical-align: central;
+            z-index: 0;
+        }
+
+        ​ .space {
+            height: 50px;
+            margin: auto;
+            width: 100%;
+        }
+
+        @-webkit-keyframes rotateSlowRight {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+
+            to {
+                -webkit-transform: rotate(359deg);
+            }
+        }
+
+        .rotateSlowRight {
+            -webkit-animation-name: rotateSlowRight;
+            -webkit-animation-duration: 30s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+        }
+
+        @-webkit-keyframes rotateSlowLeft {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+
+            to {
+                -webkit-transform: rotate(-359deg);
+            }
+        }
+
+        .rotateSlowLeft {
+            -webkit-animation-name: rotateSlowLeft;
+            -webkit-animation-duration: 30s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+        }
+
+        @-webkit-keyframes rotateFastLeft {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+
+            to {
+                -webkit-transform: rotate(-359deg);
+            }
+        }
+
+        .rotateFastLeft {
+            -webkit-animation-name: rotateFastLeft;
+            -webkit-animation-duration: 5s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+        }
+
+        @-webkit-keyframes rotateFastRight {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+
+            to {
+                -webkit-transform: rotate(359deg);
+            }
+        }
+
+        .rotateFastRight {
+            -webkit-animation-name: rotateFastRight;
+            -webkit-animation-duration: 5s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+        }
+
+        @-webkit-keyframes rotateSuperFastLeft {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+
+            to {
+                -webkit-transform: rotate(-359deg);
+            }
+        }
+
+        .rotateSuperFastLeft {
+            -webkit-animation-name: rotateSuperFastLeft;
+            -webkit-animation-duration: 2s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+        }
+
+
+
+        img {
+            width: 600px;
+            position: fixed;
+            margin: auto;
+        }
+
+        .c1 {
+            z-index: 2;
+        }
+
+        .c2 {
+            z-index: 3;
+        }
+
+        .c3 {
+            z-index: 4;
+        }
+
+        .c4 {
+            z-index: 5;
+        }
+
+        .c5 {
+            z-index: 6;
+        }
+
+        .c6 {
+            z-index: 7;
+        }
+
+        .c7 {
+            z-index: 8;
+        }
+
+
+        .spin {
+            -webkit-animation: spin1 2s infinite linear;
+            -moz-animation: spin1 2s infinite linear;
+            -o-animation: spin1 2s infinite linear;
+            -ms-animation: spin1 2s infinite linear;
+            animation: spin1 2s infinite linear;
+            display: block;
+        }
+
+        @-webkit-keyframes spin1 {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @-moz-keyframes spin1 {
+            0% {
+                -moz-transform: rotate(0deg);
+            }
+
+            100% {
+                -moz-transform: rotate(360deg);
+            }
+        }
+
+        @-o-keyframes spin1 {
+            0% {
+                -o-transform: rotate(0deg);
+            }
+
+            100% {
+                -o-transform: rotate(360deg);
+            }
+        }
+
+        @-ms-keyframes spin1 {
+            0% {
+                -ms-transform: rotate(0deg);
+            }
+
+            100% {
+                -ms-transform: rotate(360deg);
+            }
+        }
+
+        @-keyframes spin1 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #loader {
+            text-align: center;
+            line-height: 90px;
+            margin: auto;
+            width: 60%;
+            height: 60%;
+            /*position:absolute;*/
+            vertical-align: middle;
+            background-color: green;
+        }
+
+        #loaderText {
+            color: white;
+            position: relative;
+            z-index: 200;
+            text-align: center;
+            margin: auto;
+            width: 20%;
+            height: 20%;
+            border-radius: 400px;
+            background-color: red;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="jumbotron">
+
+        <div id="loader">
+
+            <div id="loaderText">
+                <h1>84%</h1>
+            </div>
+
+            <img class="c1" src="images\1.png" />
+            <img class="rotateSlowLeft c2" src="images\2.png" />
+            <img class="rotateFastRight c3" src="images\3.png" />
+            <img class="rotateSuperFastLeft c4" src="images\4.png" />
+            <img class="rotateSlowRight c5" src="images\5.png" />
+            <img class="rotateFastLeft c6" src="images\6.png" />
+        </div>
+               
+
+    </div>
+
+    <script type="text/javascript">
+
+        $("#loader").click(function(){
+            alert("Hello");
+        });
+
+    </script>
+
+</body>
+</html>
