@@ -107,6 +107,16 @@ th {
     background-color: #11213a;
 }
 
+.starDiv {
+    padding: 10%;
+    width: 50%;
+    height: 200px;
+    right:5% !important;
+    top:5% !important;
+    position:absolute !important;
+    z-index:1000 !important;
+}
+
 
 /*==========================================*/
 

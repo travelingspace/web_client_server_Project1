@@ -16,8 +16,39 @@ $(function () {
 
     });
 
+    //function that handles the star sizing and placement
+    getSetSizePosition();
 
 });
+
+/**********************************************************************************************************************
+Star image animation in sky in jumbotron
+**********************************************************************************************************************/
+
+function getRandomWidth() {
+    var width = Math.floor((Math.random() * 5) + 2);
+    return width;
+}
+
+function getRandomPosition() {
+
+    var position = Math.floor((Math.random() * 100) + 30);
+    return position;
+
+}
+
+//function called on page load 
+var counter = 1;
+function getSetSizePosition() {
+
+    if (counter < 50) {
+        counter++;
+        $("#star").css("width", getRandomWidth() + "px");
+        $("#star").offset({ left: getRandomPosition(), top: getRandomPosition() });
+        window.setTimeout(getSetSizePosition, 500);
+    };
+};
+
 
 /**********************************************************************************************************************
 Icon Div MOUSEOVER Event Handers
