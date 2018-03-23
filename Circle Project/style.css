@@ -108,13 +108,21 @@ th {
 }
 
 .starDiv {
-    padding: 10%;
+    /*padding: 10%;
     width: 50%;
-    height: 200px;
+    height: 200px;*/
     right:5% !important;
     top:5% !important;
-    position:absolute !important;
+    position:relative !important;
     z-index:1000 !important;
+    text-align:right;
+    display:inline-block !important;
+    float: right; 
+}
+
+.starDiv img {
+    /*float:left !important;*/
+    
 }
 
 
